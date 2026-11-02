@@ -1,0 +1,41 @@
+# dsh-session-title bundle patch: applied as a profile bundle layer over
+# dsh-base.
+#
+# A session has exactly one title provider (the session-title service throws on
+# a second registration). dsh-base mounts the shipped first-prompt provider as
+# the row `session-title-llm`, so this layer turns that row off before inserting
+# its replacement. Removing this bundle restores the shipped provider.
+#
+# The inserted row carries the settings this plugin's Config declares. They are
+# ordinary settings: a user patch in <profile>/cordis.patch.yml can override any
+# of them by row id, and the plugin manager lists them. The naming model is the
+# one choice most users change, and it has its own page under Settings ->
+# Session titles; that page writes these same fields as volatile values, so a
+# change applies to the next title request without a restart. Leaving `provider`
+# and `model` unset (the default below) follows each session's own route.
+- id: session-title-llm
+  disabled: true
+
+- insert:
+    - id: dsh-session-title
+      name: 'dsh-session-title'
+      config:
+        # Title length targets: words for non-CJK text, characters for CJK.
+        targetWords: 6
+        targetCjkCharacters: 12
+        # Auxiliary request bounds. Titles are short; the token cap is a runaway
+        # guard that still leaves room for a reasoning model's own thinking.
+        maxInputBytes: 8192
+        maxOutputTokens: 2048
+        timeoutMs: 30000
+        # How many of the newest turns the work digest carries.
+        maxTurnsInDigest: 10
+        # When a revision is worth a model call: a completed turn, or this many
+        # completed steps inside the running turn, and never more often than the
+        # interval below.
+        minTurnsBetweenUpdates: 1
+        minStepsBetweenUpdates: 2
+        minUpdateIntervalMs: 120000
+        updateOnTurnEnd: true
+        updateOnStepEnd: true
+        includeChildSessions: false
