@@ -9,7 +9,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/icrefin/dsh-session-title?style=flat-square)](https://github.com/icrefin/dsh-session-title/commits/main)
 [![Stars](https://img.shields.io/github/stars/icrefin/dsh-session-title?style=flat-square)](https://github.com/icrefin/dsh-session-title/stargazers)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](.github/CONTRIBUTING.md)
-[![Node](https://img.shields.io/badge/node-%3E%3D22.17-339933?style=flat-square&logo=node.js)](https://nodejs.org)
+[![Node](https://img.shields.io/badge/node-%3E%3D24.9-339933?style=flat-square&logo=node.js)](https://nodejs.org)
 [![dsh](https://img.shields.io/badge/dsh-0.2.1--rc.5-4B5563?style=flat-square)](https://github.com/deepseek-ai/deepseek-harness)
 
 DeepSeek Harness 按**第一句提示词**给会话命名，然后就到此为止。对只问一句话
@@ -18,7 +18,7 @@ DeepSeek Harness 按**第一句提示词**给会话命名，然后就到此为�
 tarball 安装包。本插件按会话**实际做过的任务**给它命名，并随着后续回合把工作
 继续往前推，让名字跟上。
 
-针对 **dsh 0.2.1-rc.5**（桌面端）测试。
+针对 **dsh 0.2.2-rc.1**（桌面端）测试。
 
 ```
 Before, after fourteen turns of work:      After:

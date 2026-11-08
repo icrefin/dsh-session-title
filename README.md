@@ -1,17 +1,5 @@
 # dsh-session-title
 
-Session titles that follow the work a session actually did — not the first prompt that started it.
-**English** | [简体中文](README.zh-CN.md)
-
-[![License](https://img.shields.io/github/license/icrefin/dsh-session-title?style=flat-square)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/icrefin/dsh-session-title?style=flat-square)](https://github.com/icrefin/dsh-session-title/releases)
-[![CI](https://img.shields.io/github/actions/workflow/status/icrefin/dsh-session-title/ci.yml?branch=main&style=flat-square)](https://github.com/icrefin/dsh-session-title/actions/workflows/ci.yml)
-[![Last commit](https://img.shields.io/github/last-commit/icrefin/dsh-session-title?style=flat-square)](https://github.com/icrefin/dsh-session-title/commits/main)
-[![Stars](https://img.shields.io/github/stars/icrefin/dsh-session-title?style=flat-square)](https://github.com/icrefin/dsh-session-title/stargazers)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](.github/CONTRIBUTING.md)
-[![Node](https://img.shields.io/badge/node-%3E%3D22.17-339933?style=flat-square&logo=node.js)](https://nodejs.org)
-[![dsh](https://img.shields.io/badge/dsh-0.2.1--rc.5-4B5563?style=flat-square)](https://github.com/deepseek-ai/deepseek-harness)
-
 DeepSeek Harness names a Session after its **first prompt** and stops there. That
 is fine for a one-question session and wrong for every real one: the title sits in
 the sidebar for an hour while the work moves from "Create a new plugin…" to a
@@ -19,7 +7,7 @@ provider, a scheduler, a test suite, and a tarball. This plugin names a Session
 after the **tasks it actually worked on**, and keeps the name current as later
 rounds of work move it on.
 
-Tested against **dsh 0.2.1-rc.5** (desktop).
+Tested against **dsh 0.2.2-rc.1** (desktop).
 
 ```
 Before, after fourteen turns of work:      After:
@@ -159,14 +147,14 @@ never triggers a call.
 
 ```sh
 pnpm check            # typecheck, build, tests
-scripts/install.sh    # packs dist/dsh-session-title-0.4.0.tgz
+scripts/install.sh    # packs dist/dsh-session-title-0.4.1.tgz
 ```
 
 Install the tarball into the profile that runs the harness:
 
 ```sh
 cd ~/.dsh/profiles/desktop
-pnpm add file:/absolute/path/to/dsh-session-title-0.4.0.tgz
+pnpm add file:/absolute/path/to/dsh-session-title-0.4.1.tgz
 ```
 
 Then add `"dsh-session-title"` to `dsh.profile.bundles` in that profile's
@@ -205,15 +193,3 @@ title until their next completed turn; new work retitles them.
   instruction, not a semantic check.
 - **Digest overflow rejects.** A digest that cannot fit `maxInputBytes` fails
   instead of truncating, and the previous title stands until the next revision.
-
-## Contributing
-
-Issues and pull requests are welcome — see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-for the development setup and the sign-off expectation. Please report security
-issues privately as described in [SECURITY.md](.github/SECURITY.md).
-
-## License
-
-MIT — see [LICENSE](./LICENSE).
-
-> If your sidebar finally reads like a work log, a ⭐ star helps other DSH users find it.
