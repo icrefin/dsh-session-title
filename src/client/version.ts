@@ -10,7 +10,7 @@
  */
 
 /** Package version. Bump together with `package.json`. */
-export const VERSION = '0.4.1'
+export const VERSION = '0.4.2'
 
 /** Author credit, verbatim, as the style contract requires it. */
 export const AUTHORS = 'icrefin [icrefinai@gmail.com]'

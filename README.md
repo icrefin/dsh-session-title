@@ -7,7 +7,7 @@ provider, a scheduler, a test suite, and a tarball. This plugin names a Session
 after the **tasks it actually worked on**, and keeps the name current as later
 rounds of work move it on.
 
-Tested against **dsh 0.2.2-rc.1** (desktop).
+Tested against **dsh 0.2.2-rc.2** (desktop).
 
 ```
 Before, after fourteen turns of work:      After:
@@ -147,14 +147,14 @@ never triggers a call.
 
 ```sh
 pnpm check            # typecheck, build, tests
-scripts/install.sh    # packs dist/dsh-session-title-0.4.1.tgz
+scripts/install.sh    # packs dist/dsh-session-title-0.4.2.tgz
 ```
 
 Install the tarball into the profile that runs the harness:
 
 ```sh
 cd ~/.dsh/profiles/desktop
-pnpm add file:/absolute/path/to/dsh-session-title-0.4.1.tgz
+pnpm add file:/absolute/path/to/dsh-session-title-0.4.2.tgz
 ```
 
 Then add `"dsh-session-title"` to `dsh.profile.bundles` in that profile's

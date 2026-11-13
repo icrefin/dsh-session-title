@@ -18,7 +18,7 @@ DeepSeek Harness 按**第一句提示词**给会话命名，然后就到此为�
 tarball 安装包。本插件按会话**实际做过的任务**给它命名，并随着后续回合把工作
 继续往前推，让名字跟上。
 
-针对 **dsh 0.2.2-rc.1**（桌面端）测试。
+针对 **dsh 0.2.2-rc.2**（桌面端）测试。
 
 ```
 Before, after fourteen turns of work:      After:
